@@ -1,0 +1,26 @@
+name: 'Nomad Levant Deploy'
+description: 'nomad deploy with levant'
+inputs:
+  token:
+    description: 'Token used to authenticate with a nomad server'
+    required: true
+  address:
+    description: 'Address of the nomad server'
+    required: true
+  job:
+    description: 'Path to the nomad job file'
+    required: true
+  config:
+    description: 'Path to the levant config file'
+    required: true
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  env:
+    NOMAD_TOKEN: ${{ inputs.token }}
+    NOMAD_ADDR: ${{ inputs.address }}
+    NOMAD_JOB: ${{ inputs.job }}
+    LEVANT_CONFIG: ${{ inputs.config }}
+branding:
+  icon: 'upload-cloud'
+  color: 'green'
