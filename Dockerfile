@@ -1,4 +1,4 @@
-FROM getparthenon/levant:deploy
+FROM getparthenon/levant:latest
 
 WORKDIR /
 
