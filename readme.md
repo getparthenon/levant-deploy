@@ -19,7 +19,7 @@ jobs:
         uses: actions/checkout@v1
 
       - name: Deploy with Nomad
-        uses: getparthenon/levant-deploy
+        uses: getparthenon/levant-deploy@main
         with:
           token: ${{ secrets.NOMAD_TOKEN }}
           address: ${{ secrets.NOMAD_ADDR }}
