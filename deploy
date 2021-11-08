@@ -2,4 +2,4 @@
 
 BRANCH=$(echo $GITHUB_REF | rev | cut -d\/ -f1 | rev)
 echo "deploy -var-file $LEVANT_CONFIG $NOMAD_JOB"
-/levant deploy -var-file "$LEVANT_CONFIG" "$NOMAD_JOB" -var GITHUB_SHA="${GITHUB_SHA}" -var GITHUB_BRANCH="$GITHUB_BRANCH"
+/levant deploy -var-file "$LEVANT_CONFIG" -var GITHUB_SHA="${GITHUB_SHA}" -var GITHUB_BRANCH="$GITHUB_BRANCH" "$NOMAD_JOB"
