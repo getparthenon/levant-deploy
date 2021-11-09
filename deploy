@@ -1,5 +1,5 @@
 #! /usr/bin/env bash
 
 BRANCH=$(echo $GITHUB_REF | rev | cut -d\/ -f1 | rev)
-echo "deploy -var-file $LEVANT_CONFIG $NOMAD_JOB $GITHUB_REF "
-/levant deploy -var-file "$LEVANT_CONFIG" -var GITHUB_SHA="$GITHUB_SHA" -var GITHUB_BRANCH="$GITHUB_BRANCH" "$NOMAD_JOB"
+echo "deploy -var-file $LEVANT_CONFIG $NOMAD_JOB $GITHUB_REF $BRANCH"
+/levant deploy -var-file "$LEVANT_CONFIG" -var GITHUB_SHA="$GITHUB_SHA" -var GITHUB_BRANCH="$BRANCH" "$NOMAD_JOB"
